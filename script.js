@@ -6,7 +6,7 @@ const weatherElement = document.getElementById('weather');
 
 // Function to convert Celsius to Fahrenheit
 function celsiusToFahrenheit(celsius) {
-    return (celsius * 9/5) + 32;
+    return (celsius * 9 / 5) + 32;
 }
 
 // Fetch weather data
@@ -18,7 +18,7 @@ function fetchWeatherData() {
             const response = await fetch(apiUrl);
             const data = await response.json();
             locationElement.textContent = data.name;
-            temperatureElement.textContent = data.main.temp;
+            temperatureElement.textContent = celsiusToFahrenheit(data.main.temp).toFixed(1); // Convert to Fahrenheit and set to the element
             weatherElement.textContent = data.weather[0].description;
         } catch (error) {
             console.error('Error fetching weather data:', error);
@@ -26,11 +26,11 @@ function fetchWeatherData() {
     });
 }
 
+
 // Function to fetch weather data and display it
 async function showWeather() {
     navigator.geolocation.getCurrentPosition(async (position) => {
         const { latitude, longitude } = position.coords;
-        const locationData = await fetchLocationData(latitude, longitude);
 
         const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
         try {
@@ -38,10 +38,9 @@ async function showWeather() {
             const data = await response.json();
             const cityName = data.name;
             const countryName = data.sys.country;
-            const stateName = data.sys.state || ''; // Check if state/region is available
             const temperatureCelsius = data.main.temp; // Temperature in Celsius
             const temperatureFahrenheit = celsiusToFahrenheit(temperatureCelsius); // Convert to Fahrenheit
-            const locationText = `${cityName}, ${stateName} ${countryName}`;
+            const locationText = `${cityName}, ${countryName}`;
             const temperatureText = `${temperatureFahrenheit.toFixed(2)}°F`; // Display temperature in Fahrenheit with 2 decimal places
             const weatherText = data.weather[0].description;
 
@@ -54,6 +53,7 @@ async function showWeather() {
         }
     });
 }
+
 
 // Call the function to fetch weather data
 fetchWeatherData();

@@ -44,7 +44,8 @@ main {
 }
 
 #temperature {
-  font-size: 96px;
+  font-size: 64px;
+  font-weight: 300;
 }
 .right {
   margin-right: 0px;
