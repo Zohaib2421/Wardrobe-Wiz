@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440.41 453.22">
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <path d="m218.59,84.17c-80.58,0-146.14,65.56-146.14,146.14s65.56,146.14,146.14,146.14,146.14-65.56,146.14-146.14-65.56-146.14-146.14-146.14Zm0,278.28c-72.86,0-132.14-59.28-132.14-132.14s59.28-132.14,132.14-132.14,132.14,59.28,132.14,132.14-59.28,132.14-132.14,132.14Z" fill="#fff"/>
+      <rect x="209.2" width="14" height="54.45" fill="#fff"/>
+      <rect x="69.07" y="59.89" width="14" height="54.78" transform="translate(-39.53 93.74) rotate(-52.12)" fill="#fff"/>
+      <rect y="225.22" width="54.45" height="14" fill="#fff"/>
+      <rect x="63" y="365.35" width="45.35" height="14" transform="translate(-247.92 186.08) rotate(-47.86)" fill="#fff"/>
+      <rect x="212.4" y="397.17" width="14" height="56.05" fill="#fff"/>
+      <rect x="352.53" y="347.41" width="14" height="49.88" transform="translate(-157.04 339.8) rotate(-42.4)" fill="#fff"/>
+      <rect x="389.16" y="223.61" width="51.25" height="14" fill="#fff"/>
+      <rect x="340.96" y="77.08" width="51.57" height="14" transform="translate(21.03 232.59) rotate(-36.16)" fill="#fff"/>
+    </g>
+  </g>
+</svg>
