@@ -1,2 +1,1 @@
-# Snake
- Online snake game
+# Wardrobe Wiz
