@@ -22,10 +22,21 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  color: var(--secondary);
 }
+
+.weather-info {
+  margin-top: 100px;
+  margin-left: 0px;
+}
+
+.left > div > h1 {
+  color: var(--text);
+}
+
 #temperature {
   font-family: system-ui, -apple-system;
-  font-size: 64px;
+  font-size: 96px;
 }
 .right {
   margin-right: 0px;
