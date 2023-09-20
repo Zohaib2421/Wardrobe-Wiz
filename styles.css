@@ -61,3 +61,25 @@ main {
   display: flex;
   justify-content: space-between;
 }
+
+#generate {
+  width: 300px;
+  height: 75px;
+  border-radius: 20px;
+  background: var(--tertiary);
+  border: 0px;
+  font-weight: 200;
+  color: var(--secondary);
+  font-size: 24px;
+}
+
+#add {
+  width: 300px;
+  height: 75px;
+  border-radius: 20px;
+  background: var(--primary);
+  border: 0px;
+  font-weight: 200;
+  color: var(--secondary);
+  font-size: 24px;
+}
