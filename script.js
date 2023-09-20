@@ -82,9 +82,6 @@ async function showWeather() {
     });
 }
 
-
-
-
 // Call the function to fetch weather data
 fetchWeatherData();
 showWeather();
