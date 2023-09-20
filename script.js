@@ -4,6 +4,11 @@ const locationElement = document.getElementById('location');
 const temperatureElement = document.getElementById('temperature');
 const weatherElement = document.getElementById('weather');
 
+// Function to convert Celsius to Fahrenheit
+function celsiusToFahrenheit(celsius) {
+    return (celsius * 9/5) + 32;
+}
+
 // Fetch weather data
 function fetchWeatherData() {
     navigator.geolocation.getCurrentPosition(async (position) => {
@@ -31,8 +36,13 @@ async function showWeather() {
         try {
             const response = await fetch(apiUrl);
             const data = await response.json();
-            const locationText = `${data.name}, ${locationData.country}`;
-            const temperatureText = `${data.main.temp}°C`;
+            const cityName = data.name;
+            const countryName = data.sys.country;
+            const stateName = data.sys.state || ''; // Check if state/region is available
+            const temperatureCelsius = data.main.temp; // Temperature in Celsius
+            const temperatureFahrenheit = celsiusToFahrenheit(temperatureCelsius); // Convert to Fahrenheit
+            const locationText = `${cityName}, ${stateName} ${countryName}`;
+            const temperatureText = `${temperatureFahrenheit.toFixed(2)}°F`; // Display temperature in Fahrenheit with 2 decimal places
             const weatherText = data.weather[0].description;
 
             // Display location and weather data
