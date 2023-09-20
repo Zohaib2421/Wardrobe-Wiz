@@ -26,7 +26,6 @@ function fetchWeatherData() {
     });
 }
 
-
 // Function to fetch weather data and display it
 async function showWeather() {
     navigator.geolocation.getCurrentPosition(async (position) => {
@@ -41,18 +40,25 @@ async function showWeather() {
             const temperatureCelsius = data.main.temp; // Temperature in Celsius
             const temperatureFahrenheit = celsiusToFahrenheit(temperatureCelsius); // Convert to Fahrenheit
             const locationText = `${cityName}, ${countryName}`;
-            const temperatureText = `${temperatureFahrenheit.toFixed(2)}°F`.toUpperCase(); // Display temperature in Fahrenheit with 2 decimal places
+            const temperatureText = `${temperatureFahrenheit.toFixed(2)}°F`; // Display temperature in Fahrenheit with 2 decimal places
             const weatherText = data.weather[0].description.toUpperCase();
+            const weatherIconCode = data.weather[0].icon;
+            const weatherIconUrl = `https://openweathermap.org/img/wn/${weatherIconCode}.png`;
+            document.getElementById('weather-icon').src = weatherIconUrl;
 
-            // Display location and weather data
+
+            // Display location, temperature, and weather data
             locationElement.textContent = locationText;
             temperatureElement.textContent = temperatureText;
             weatherElement.textContent = weatherText;
+            document.getElementById('weather-icon').src = weatherIconUrl; // Set the icon URL to the img element
+
         } catch (error) {
             console.error('Error fetching weather data:', error);
         }
     });
 }
+
 
 
 
