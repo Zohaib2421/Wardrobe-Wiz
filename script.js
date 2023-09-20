@@ -2,7 +2,7 @@
 const apiKey = 'd819733e2fd2744c924d0b49f48befdc';
 const locationElement = document.getElementById('location');
 const temperatureElement = document.getElementById('temperature');
-const weatherElement = document.getElementById('weather-icon');
+const weatherElement = document.getElementById('weather');
 
 // Fetch weather data
 function fetchWeatherData() {
@@ -14,7 +14,7 @@ function fetchWeatherData() {
             const data = await response.json();
             locationElement.textContent = data.name;
             temperatureElement.textContent = data.main.temp;
-            weatherElement.textContent = data.weather[0].icon;
+            weatherElement.textContent = data.weather[0].description;
         } catch (error) {
             console.error('Error fetching weather data:', error);
         }
@@ -33,7 +33,7 @@ async function showWeather() {
             const data = await response.json();
             const locationText = `${data.name}, ${locationData.country}`;
             const temperatureText = `${data.main.temp}°C`;
-            const weatherText = data.weather[0].icon;
+            const weatherText = data.weather[0].description;
 
             // Display location and weather data
             locationElement.textContent = locationText;
