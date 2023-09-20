@@ -36,13 +36,13 @@ async function showWeather() {
         try {
             const response = await fetch(apiUrl);
             const data = await response.json();
-            const cityName = data.name;
-            const countryName = data.sys.country;
+            const cityName = data.name.toUpperCase();
+            const countryName = data.sys.country.toUpperCase();
             const temperatureCelsius = data.main.temp; // Temperature in Celsius
             const temperatureFahrenheit = celsiusToFahrenheit(temperatureCelsius); // Convert to Fahrenheit
             const locationText = `${cityName}, ${countryName}`;
-            const temperatureText = `${temperatureFahrenheit.toFixed(2)}°F`; // Display temperature in Fahrenheit with 2 decimal places
-            const weatherText = data.weather[0].description;
+            const temperatureText = `${temperatureFahrenheit.toFixed(2)}°F`.toUpperCase(); // Display temperature in Fahrenheit with 2 decimal places
+            const weatherText = data.weather[0].description.toUpperCase();
 
             // Display location and weather data
             locationElement.textContent = locationText;
@@ -53,6 +53,7 @@ async function showWeather() {
         }
     });
 }
+
 
 
 // Call the function to fetch weather data
