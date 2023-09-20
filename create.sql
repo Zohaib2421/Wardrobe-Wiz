@@ -61,10 +61,3 @@ value('1', 'Sneakers', 'Red', 'Jordan');
 
 insert into Wardrobe(outfitID, st_ID, l_ID, o_ID, sh_ID, rating)
 value('A', '1', '1', '1', '1', '7');
-
-
-select * from Shirt;
-select * from Legwear;
-select * from Outerwear;
-select * from Shoes;
-select * from Wardrobe;
