@@ -1,0 +1,17 @@
+if temperature >= 85:
+    print(Shirt: random**TSHIRT)
+    print(Pants: random**SHORTS/SKIRTs)
+    print(Outerwear: None)
+    print(Shoes: random**SHOES)
+
+elif temperature >= 60:
+    print(Shirt: random**LONG SLEEVE SHIRT)
+    print(Pants: random**LONG PANTS)
+    print(Outerwear: NONE)
+    print(Shoes: random**SHOES)
+
+else:
+    print(Shirt: anyShirt)
+    print(Pants: random**LONG PANTS)
+    print(OuterWear: anyOuterWear)
+    print(Shoes: random**Shoes)
