@@ -65,7 +65,7 @@ img {
 }
 .right > h1 {
   margin-top: 150px;
-  font-weight: 300;
+  font-weight: 400;
 }
 .clothing {
   display: flex;
@@ -75,10 +75,14 @@ img {
 .clothing-item {
   padding-left: 20px;
   display: flex;
+  gap: 20px;
   align-items: center;
   height: 100px;
-  border: 3px solid var(--primary);
-  border-radius: 12px;
+  border-bottom: 3px solid var(--tertiary);
+  border-radius: 7.5px;
+}
+.clothing-item > h1 {
+  font-weight: 300;
 }
 .shirt,
 .pants,
