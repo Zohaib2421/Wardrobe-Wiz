@@ -53,23 +53,23 @@ async function showWeather() {
     navigator.geolocation.getCurrentPosition(async (position) => {
         const { latitude, longitude } = position.coords;
         const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
-        
+
         try {
             const response = await fetch(apiUrl);
             const data = await response.json();
-            
+
             const cityName = data.name.toUpperCase();
             const countryName = data.sys.country.toUpperCase();
             const temperatureCelsius = data.main.temp;
             const temperatureFahrenheit = celsiusToFahrenheit(temperatureCelsius);
             const locationText = `${cityName}, ${countryName}`;
-            const temperatureText = `${temperatureFahrenheit.toFixed(2)}°F`;
+            const temperatureText = `${temperatureFahrenheit.toFixed(1)}°F`;
             const weatherText = data.weather[0].description.toUpperCase();
-            
+
             // Determine which SVG icon to display
             const weatherIconCode = data.weather[0].icon;
             const weatherIconUrl = iconMap[weatherIconCode] || 'icons/default.svg'; // Use a default icon if the icon code is not in the map
-            
+
             // Display location, temperature, and weather data
             locationElement.textContent = locationText;
             temperatureElement.textContent = temperatureText;
