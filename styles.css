@@ -73,9 +73,20 @@ img {
   gap: 50px;
 }
 .clothing-item {
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
   height: 100px;
   border: 3px solid var(--primary);
   border-radius: 12px;
+}
+.shirt,
+.pants,
+.outerwear,
+.shoes {
+  max-height: 60px;
+  height: auto; /* Example height, adjust as needed */
+  width: 60px; /* Adjust width automatically to maintain aspect ratio */
 }
 .buttons {
   display: flex;
