@@ -17,6 +17,14 @@ main {
 
 .left {
   width: 20vw;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#temperature {
+  font-family: system-ui, -apple-system;
+  font-size: 64px;
 }
 .right {
   margin-right: 0px;
