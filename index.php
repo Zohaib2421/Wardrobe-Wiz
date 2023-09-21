@@ -49,7 +49,9 @@ $conn = new mysqli($servername, $username, $password);
             </div>
             <div class="buttons">
                 <button id="generate">Generate Clothing</button>
-                <button id="add">Add to Wardrobe</button>
+                <form action="Wardrobe.html" method="post">
+                    <button type="submit" id="add">Add to Wardrobe</button>
+                </form>
             </div>
         </div>
     </main>
