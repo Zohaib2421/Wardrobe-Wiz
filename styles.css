@@ -163,6 +163,7 @@ fieldset {
 #wardrobe {
   display: flex;
   z-index: 1;
+  overflow-y: auto;
   border-radius: 10px;
   display: none;
   flex-direction: column;

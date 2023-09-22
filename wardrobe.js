@@ -1,8 +1,12 @@
-document.getElementById('overlay').addEventListener("click", () => closeWardrobe());
+document.getElementById('overlay').addEventListener("click", () => {
+    closeWardrobe()
+    closeForm()
+});
 
 function openForm() {
     document.getElementById('form').style.display = 'block';
-    const formElement = document.getElementById('clothing-form');
+    document.getElementById('overlay').style.display = 'block';
+    const formElement = document.getElementById('form');
     console.log(document.getElementById('form').style.display);
 }
 
@@ -13,6 +17,11 @@ function openWardrobe() {
 
 function closeWardrobe() {
     document.getElementById('wardrobe').style.display = 'none';
+    document.getElementById('overlay').style.display = 'none';
+}
+
+function closeForm() {
+    document.getElementById('form').style.display = 'none';
     document.getElementById('overlay').style.display = 'none';
 }
 
@@ -46,9 +55,11 @@ function updateWardrobe() {
 
 // Handle form submission
 document.getElementById('form').addEventListener('submit', function(event) {  // Fixed the typo here
-  event.preventDefault(); // Prevent default form submission behavior
+    event.preventDefault(); // Prevent default form submission behavior
+    console.log("Form submission prevented");
 
-  // Get form values
+    // Get form values
+    const item = document.getElementById('item').value;
   const type = document.getElementById('type').value;
   const color = document.getElementById('color').value;
   const material = document.getElementById('material').value;
@@ -71,7 +82,7 @@ document.getElementById('form').addEventListener('submit', function(event) {  //
 
   // Clear the form
     event.target.reset();
-    document.getElementById('form').style.display = 'none';
+    closeForm();
 });
 
 function removeClothing(index) {
