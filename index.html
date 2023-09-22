@@ -7,7 +7,8 @@
     <title>Weather & Wardrobe</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://use.typekit.net/kog5frj.css">
-    <script src="script.js" defer></script>
+    <script src="getApi.js" defer></script>
+    <script src="wardrobe.js" defer></script>
 </head>
 
 <body>
@@ -25,6 +26,7 @@
             </div>
         </div>
         <div class="right">
+            <div id="overlay" class="overlay"></div>
             <h1>Today's Outfit</h1>
             <div class="clothing">
                 <div class="clothing-item">
@@ -45,9 +47,30 @@
                 </div>
             </div>
             <div class="buttons">
-                <button id="generate">GENERATE CLOTHING</button>
-                <button id="add">WARDROBE</button>
+                <button id="addClothes" onclick="openForm()">ADD CLOTHES</button>
+                <button id="add" onclick="openWardrobe()">WARDROBE</button>
+                <button id="generate" onclick="">generate</button>
             </div>
+            <form id="form">
+                <fieldset>
+                    <label for="type">Style: </label>
+                    <input type="text" name="type" id="type">
+                </fieldset>
+                <fieldset>
+                    <label for="color">Color: </label>
+                    <input type="text" name="color" id="color">
+                </fieldset>
+                <fieldset>
+                    <label for="material">Material: </label>
+                    <input type="text" name="material" id="material">
+                </fieldset>
+                <fieldset>
+                    <label for="brand">Brand: </label>
+                    <input type="text" name="brand" id="brand">
+                </fieldset>
+                <input type="submit" id="submit" value="Add Clothing">
+            </form>
+            <div id="wardrobe">My wardrobe</div>
         </div>
     </main>
 </body>
