@@ -122,6 +122,7 @@ img {
   font-size: 24px;
   font-family: "elza", sans-serif;
 }
+<<<<<<< Updated upstream
 #overlay {
   display: none;
   position:absolute; 
@@ -131,15 +132,23 @@ img {
   height: 100vh;
   width: 100vw;
 }
+=======
+>>>>>>> Stashed changes
 form {
   z-index: 2;
   border-radius: 10px;
   display: none; /* Initially hidden */
   flex-direction: column;
   justify-content: space-evenly;
+<<<<<<< Updated upstream
   position: absolute; 
   left: 50%;
   top: 50%; 
+=======
+  position: absolute;
+  left: 50%;
+  top: 50%;
+>>>>>>> Stashed changes
   transform: translate(-50%, -50%);
   height: 450px;
   width: 450px;
@@ -160,6 +169,7 @@ fieldset {
   gap: 5px;
   border: 2px solid var(--red);
 }
+<<<<<<< Updated upstream
 #wardrobe {
   display: flex;
   z-index: 1;
@@ -187,3 +197,5 @@ fieldset {
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
+=======
+>>>>>>> Stashed changes
